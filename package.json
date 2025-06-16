@@ -1,0 +1,16 @@
+{
+  "name": "unitestingtask",
+  "version": "0.0.1",
+  "description": "Unit testing task",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "test:coverage": "jest --collect-coverage"
+  },
+  "dependencies": {
+    "jest": "^29.7.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14"
+  }
+}
