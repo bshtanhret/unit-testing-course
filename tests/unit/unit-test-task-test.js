@@ -245,6 +245,35 @@ const scenariosForLangs = {
     ["formats timezone in ISO8601", ["ZZ", date], "+0100"],
     ["formats timezone in ISO8601 extended", ["Z", date], "+01:00"],
   ],
+  en: [
+    ["formats year", ["YYYY", date], "2010"],
+    ["formats year shortly", ["YY", date], "10"],
+    ["formats month", ["MMMM", date], "November"],
+    ["formats month shortly", ["MMM", date], "Nov"],
+    ["formats month number", ["MM", date], "11"],
+    ["formats month number shortly", ["M", date], "11"],
+    ["formats day", ["DDD", date], "Monday"],
+    ["formats day more short", ["DD", date], "Mon"],
+    ["formats day shorter", ["D", date], "Mo"],
+    ["formats day of the month", ["dd", date], "15"],
+    ["formats day of the month shortly", ["d", date], "15"],
+    ["formats hour", ["HH", date], "14"],
+    ["formats hour shortly", ["H", date], "14"],
+    ["formats hour in 12h format", ["hh", date], "02"],
+    ["formats hour in 12h format shortly", ["h", date], "2"],
+    ["formats minutes", ["mm", date], "30"],
+    ["formats minutes shortly", ["m", date], "30"],
+    ["formats seconds", ["ss", date], "00"],
+    ["formats seconds shortly", ["s", date], "0"],
+    ["formats milliseconds", ["ff", date], "000"],
+    ["formats milliseconds shortly", ["f", date], "0"],
+    ["formats timezone in ISO8601", ["ZZ", date], "+0100"],
+    ["formats timezone in ISO8601 extended", ["Z", date], "+01:00"],
+    ["formats AM/PM", ["A", date], "PM"],
+    ["formats am/pm", ["a", date], "pm"],
+    ["formats AM/PM at morning", ["A", morningDate], "AM"],
+    ["formats am/pm at morning", ["a", morningDate], "am"],
+  ]
 };
 
 describe("unitTestingTask", () => {
@@ -349,3 +378,18 @@ describe("UMD wrapper", () => {
     });
   }
 });
+
+test("it throws errors", () => {
+  jest.resetModules();
+
+  expect(() => unitTestingTask(123)).toThrow('Argument `format` must be a string')
+  expect(() => unitTestingTask('MM', null)).toThrow('Argument `date` must be instance of Date or Unix Timestamp or ISODate String')
+})
+
+// test('it sets lang to en if lang incorrect', () => {
+//   jest.resetModules();
+
+//   unitTestingTask.lang('not-exist')
+
+//   expect(unitTestingTask('MMMM', date)).toBe('asf')
+// })
