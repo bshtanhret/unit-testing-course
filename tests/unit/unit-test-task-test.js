@@ -343,10 +343,14 @@ describe("unitTestingTask.register", () => {
 
   for (const [name, format, expected] of variants) {
     test(name, () => {
+      const unitTestingTask = require("../../unitTestingTask")
+      const formatters = unitTestingTask.formatters()
+
       unitTestingTask.register(name, format);
 
       const result = unitTestingTask(name, testDate);
       expect(result).toBe(expected);
+      expect(unitTestingTask.formatters()).toMatchObject([...formatters, name])
     });
   }
 });
@@ -382,14 +386,7 @@ describe("UMD wrapper", () => {
 test("it throws errors", () => {
   jest.resetModules();
 
+  expect(() => unitTestingTask()).toThrow('Argument `format` must be a string')
   expect(() => unitTestingTask(123)).toThrow('Argument `format` must be a string')
   expect(() => unitTestingTask('MM', null)).toThrow('Argument `date` must be instance of Date or Unix Timestamp or ISODate String')
 })
-
-// test('it sets lang to en if lang incorrect', () => {
-//   jest.resetModules();
-
-//   unitTestingTask.lang('not-exist')
-
-//   expect(unitTestingTask('MMMM', date)).toBe('asf')
-// })
