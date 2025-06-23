@@ -7,10 +7,10 @@ const languages = fs
   .filter((file) => path.extname(file) === ".js")
   .map((file) => path.basename(file, ".js"));
 
-const date = new Date("2010-11-15T14:30:00");
-const nightDate = new Date("2010-11-15T02:30:00");
-const morningDate = new Date("2010-11-15T06:30:00");
-const eveningDate = new Date("2010-11-15T20:30:00");
+const date = new Date(Date.UTC(2010, 10, 15, 13, 30));
+const nightDate = new Date(Date.UTC(2010, 10, 13, 2, 30));
+const morningDate = new Date(Date.UTC(2010, 10, 13, 6, 30));
+const eveningDate = new Date(Date.UTC(2010, 10, 13, 20, 30));
 
 const scenariosForLangs = {
   uk: [
