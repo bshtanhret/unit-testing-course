@@ -7,10 +7,10 @@ const languages = fs
   .filter((file) => path.extname(file) === ".js")
   .map((file) => path.basename(file, ".js"));
 
-const date = new Date(Date.UTC(2010, 10, 15, 13, 30));
-const nightDate = new Date(Date.UTC(2010, 10, 13, 2, 30));
-const morningDate = new Date(Date.UTC(2010, 10, 13, 6, 30));
-const eveningDate = new Date(Date.UTC(2010, 10, 13, 20, 30));
+const date = new Date("2010-11-15T14:30:00");
+const nightDate = new Date("2010-11-15T02:30:00");
+const morningDate = new Date("2010-11-15T06:30:00");
+const eveningDate = new Date("2010-11-15T20:30:00");
 
 const scenariosForLangs = {
   uk: [
@@ -43,8 +43,8 @@ const scenariosForLangs = {
     ["formats am/pm at evening", ["a", eveningDate], "вечора"],
     ["formats AM/PM at night", ["A", nightDate], "ночі"],
     ["formats am/pm at night", ["a", nightDate], "ночі"],
-    ["formats timezone in ISO8601", ["ZZ", date], "+0100"],
-    ["formats timezone in ISO8601 extended", ["Z", date], "+01:00"],
+    ["formats timezone in ISO8601", ["ZZ", date], "+0000"],
+    ["formats timezone in ISO8601 extended", ["Z", date], "+00:00"],
   ],
   be: [
     ["formats year", ["YYYY", date], "2010"],
@@ -76,8 +76,8 @@ const scenariosForLangs = {
     ["formats am/pm at night", ["a", morningDate], "раніцы"],
     ["formats AM/PM at night", ["A", eveningDate], "вечара"],
     ["formats am/pm at night", ["a", eveningDate], "вечара"],
-    ["formats timezone in ISO8601", ["ZZ", date], "+0100"],
-    ["formats timezone in ISO8601 extended", ["Z", date], "+01:00"],
+    ["formats timezone in ISO8601", ["ZZ", date], "+0000"],
+    ["formats timezone in ISO8601 extended", ["Z", date], "+00:00"],
   ],
   cs: [
     ["formats year", ["YYYY", date], "2010"],
@@ -105,8 +105,8 @@ const scenariosForLangs = {
     ["formats am/pm", ["a", date], "odpoledne"],
     ["formats AM/PM at morning", ["A", morningDate], "dopoledne"],
     ["formats am/pm at morning", ["a", morningDate], "dopoledne"],
-    ["formats timezone in ISO8601", ["ZZ", date], "+0100"],
-    ["formats timezone in ISO8601 extended", ["Z", date], "+01:00"],
+    ["formats timezone in ISO8601", ["ZZ", date], "+0000"],
+    ["formats timezone in ISO8601 extended", ["Z", date], "+00:00"],
   ],
   kk: [
     ["formats year", ["YYYY", date], "2010"],
@@ -130,8 +130,8 @@ const scenariosForLangs = {
     ["formats seconds shortly", ["s", date], "0"],
     ["formats milliseconds", ["ff", date], "000"],
     ["formats milliseconds shortly", ["f", date], "0"],
-    ["formats timezone in ISO8601", ["ZZ", date], "+0100"],
-    ["formats timezone in ISO8601 extended", ["Z", date], "+01:00"],
+    ["formats timezone in ISO8601", ["ZZ", date], "+0000"],
+    ["formats timezone in ISO8601 extended", ["Z", date], "+00:00"],
   ],
   pl: [
     ["formats year", ["YYYY", date], "2010"],
@@ -159,8 +159,8 @@ const scenariosForLangs = {
     ["formats am/pm", ["a", date], ""],
     ["formats AM/PM at morning", ["A", morningDate], "rano"],
     ["formats am/pm at morning", ["a", morningDate], "rano"],
-    ["formats timezone in ISO8601", ["ZZ", date], "+0100"],
-    ["formats timezone in ISO8601 extended", ["Z", date], "+01:00"],
+    ["formats timezone in ISO8601", ["ZZ", date], "+0000"],
+    ["formats timezone in ISO8601 extended", ["Z", date], "+00:00"],
   ],
   ru: [
     ["formats year", ["YYYY", date], "2010"],
@@ -192,8 +192,8 @@ const scenariosForLangs = {
     ["formats am/pm at evening", ["a", eveningDate], "вечера"],
     ["formats AM/PM at night", ["A", nightDate], "ночи"],
     ["formats am/pm at night", ["a", nightDate], "ночи"],
-    ["formats timezone in ISO8601", ["ZZ", date], "+0100"],
-    ["formats timezone in ISO8601 extended", ["Z", date], "+01:00"],
+    ["formats timezone in ISO8601", ["ZZ", date], "+0000"],
+    ["formats timezone in ISO8601 extended", ["Z", date], "+00:00"],
   ],
   tr: [
     ["formats year", ["YYYY", date], "2010"],
@@ -217,8 +217,8 @@ const scenariosForLangs = {
     ["formats seconds shortly", ["s", date], "0"],
     ["formats milliseconds", ["ff", date], "000"],
     ["formats milliseconds shortly", ["f", date], "0"],
-    ["formats timezone in ISO8601", ["ZZ", date], "+0100"],
-    ["formats timezone in ISO8601 extended", ["Z", date], "+01:00"],
+    ["formats timezone in ISO8601", ["ZZ", date], "+0000"],
+    ["formats timezone in ISO8601 extended", ["Z", date], "+00:00"],
   ],
   tt: [
     ["formats year", ["YYYY", date], "2010"],
@@ -242,8 +242,8 @@ const scenariosForLangs = {
     ["formats seconds shortly", ["s", date], "0"],
     ["formats milliseconds", ["ff", date], "000"],
     ["formats milliseconds shortly", ["f", date], "0"],
-    ["formats timezone in ISO8601", ["ZZ", date], "+0100"],
-    ["formats timezone in ISO8601 extended", ["Z", date], "+01:00"],
+    ["formats timezone in ISO8601", ["ZZ", date], "+0000"],
+    ["formats timezone in ISO8601 extended", ["Z", date], "+00:00"],
   ],
   en: [
     ["formats year", ["YYYY", date], "2010"],
@@ -267,8 +267,8 @@ const scenariosForLangs = {
     ["formats seconds shortly", ["s", date], "0"],
     ["formats milliseconds", ["ff", date], "000"],
     ["formats milliseconds shortly", ["f", date], "0"],
-    ["formats timezone in ISO8601", ["ZZ", date], "+0100"],
-    ["formats timezone in ISO8601 extended", ["Z", date], "+01:00"],
+    ["formats timezone in ISO8601", ["ZZ", date], "+0000"],
+    ["formats timezone in ISO8601 extended", ["Z", date], "+00:00"],
     ["formats AM/PM", ["A", date], "PM"],
     ["formats am/pm", ["a", date], "pm"],
     ["formats AM/PM at morning", ["A", morningDate], "AM"],
